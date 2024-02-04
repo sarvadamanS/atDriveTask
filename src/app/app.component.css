@@ -1,0 +1,11 @@
+/* Style the links inside list items */
+li a {
+  color: blue; /* Set link text color */
+  text-decoration: none; /* Remove underline */
+  padding: 5px 10px; /* Add padding around the link */
+}
+
+/* Style link hover state */
+li a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

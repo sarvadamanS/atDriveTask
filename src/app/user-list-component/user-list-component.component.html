@@ -1,0 +1,41 @@
+<div>
+  <h2>User List</h2>
+  <div class="form">
+    <label>
+      <input
+        type="radio"
+        name="filterType"
+        [(ngModel)]="filterType"
+        value="name"
+      />
+      Filter by Name
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="filterType"
+        [(ngModel)]="filterType"
+        value="email"
+      />
+      Filter by Email
+    </label>
+    <input
+      type="text"
+      [(ngModel)]="filterValue"
+      placeholder="Enter filter value"
+    />
+  </div>
+  <ul>
+    @for(item of filteredData();track item.id){
+    <li>
+      <h3>
+        {{ item.name }}
+      </h3>
+      <p>
+        {{ item.email }}
+      </p>
+    </li>
+    }
+  </ul>
+  <div></div>
+</div>
