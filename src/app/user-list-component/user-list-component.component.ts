@@ -13,19 +13,26 @@ import { UserService } from '../user.service';
   styleUrl: './user-list-component.component.css',
 })
 export class UserListComponentComponent {
+  currentStatus: string = 'Loading.....';
   filterType: string = 'name'; // Default filter type
-  filterValue: string = '';
+  filterValue: string = ''; //Stores keywords typed using Two way Data binding
   data: any[] = [];
   constructor(private userService: UserService) {}
+  //Called on intialisation
   ngOnInit(): void {
     this.fetchData();
   }
+  //Call method from API serive to fetch data
   fetchData() {
     this.userService.fetchData().subscribe((data: any) => {
-      console.log(data);
       this.data = data;
-    });
+    }),
+      (error: any) => {
+        console.log('oops', error);
+        this.currentStatus = error;
+      };
   }
+  //Filtering data accroding to input
   filteredData() {
     if (this.filterValue.length === 0) {
       return this.data;

@@ -22,18 +22,17 @@
     <input
       type="text"
       [(ngModel)]="filterValue"
-      placeholder="Enter filter value"
+      placeholder="Enter search keyword"
     />
   </div>
   <ul>
+    <p>{{ !data[0] ? "Loading...." : null }}</p>
     @for(item of filteredData();track item.id){
     <li>
-      <h3>
-        {{ item.name }}
-      </h3>
-      <p>
-        {{ item.email }}
-      </p>
+      <h3>Name:</h3>
+      <p>{{ item.name }}</p>
+      <h3>Email:</h3>
+      <p>{{ item.email }}</p>
     </li>
     }
   </ul>

@@ -16,7 +16,7 @@ ul {
 }
 
 li {
-  padding: 10px 15px;
+  padding: 0.2px 3px;
   background-color: #f2f2f2;
   margin-bottom: 5px;
   border-radius: 4px;
@@ -29,4 +29,7 @@ li:hover {
 li a {
   text-decoration: none;
   color: #333;
+}
+li:nth-child(even) {
+  background-color: #cfc8c8; /* Alternate background color */
 }
